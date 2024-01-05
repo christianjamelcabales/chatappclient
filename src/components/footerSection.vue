@@ -120,7 +120,8 @@ const reset = async () => {
 
 const message = ref('')
 // Create WebSocket connection.
-const socket = new WebSocket('ws://localhost:3000')
+const socket = new WebSocket('wss://chatappserver-34od.onrender.com/');
+
 
 // Ensure the WebSocket connection is open before interacting with it.
 socket.addEventListener('open', async () => {
