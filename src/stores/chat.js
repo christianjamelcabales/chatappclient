@@ -7,21 +7,19 @@ export const useChatStore = defineStore('chat', {
     clientId: null,
     convoId: null,
     singleconvo: null,
-    isLoading: false,
+    isLoading: true,
     hideTypingMessage: true,
     whoIsTyping: null
   }),
   actions: {
     async getAll() {
-      this.isLoading = true;
+      
       try {
         const response = await myAxios.get('/chat/');
         this.convo = response.data;
       } catch (error) {
         console.error('Error fetching all conversations:', error);
-      } finally {
-        this.isLoading = false;
-      }
+      } 
     },
 
     async getSingle() {
@@ -35,15 +33,16 @@ export const useChatStore = defineStore('chat', {
         try {
           const response = await myAxios.get(`/chat/${myconvo._id}`);
           this.singleconvo = response.data;
+          this.isLoading = false
         } catch (error) {
           console.error('Error fetching single conversation:', error);
-        } finally {
-          this.isLoading = false;
-        }
+        } 
       } else {
         console.log('Conversation not found for the specified client ID. ' + this.clientId);
-        this.isLoading = false;
       }
+
+     
+
     },
 
     async updateConvo(){

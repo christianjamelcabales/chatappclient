@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <!-- Scrollable content -->
-    <div class="scrollable-content mb-2">
+    <div v-if="!chatStore.isLoading" class="scrollable-content mb-2">
       <div
         class="container pt-1"
         v-for="(item, index) in chatStore.singleconvo.chat"
@@ -21,10 +21,8 @@
             </p>
           </div>
         </div>
-
-
         <div>
-          <div class="container fixed-bottom mb-5" :class="{'d-none': chatStore.hideTypingMessage }" style="opacity: 0.2;">
+      <div class="container fixed-bottom mb-5" :class="{'d-none': chatStore.hideTypingMessage }" style="opacity: 0.2;">
 
           <div class="spinner-grow spinner-grow-sm mr-2" role="status"></div>
           <em>Stranger is typing...</em>
@@ -36,9 +34,18 @@
       </div>
 
   <!-- Your existing code -->
-
-     
       <div ref="scrollTarget" class="mt-5"></div>
+    </div>
+    <div v-else>
+        <div class="scrollable-content mb-2">
+          <div class="container pt-1">
+            <div class="card my-1">
+              <div class="card-body chat2">
+                  <p> *** Connecting you to a stranger, please wait... *** </p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <!-- Fixed bottom container -->
@@ -120,7 +127,9 @@ const reset = async () => {
 
 const message = ref('')
 // Create WebSocket connection.
+
 const socket = new WebSocket('wss://chatappserver-34od.onrender.com/');
+
 
 
 // Ensure the WebSocket connection is open before interacting with it.
@@ -169,7 +178,7 @@ socket.addEventListener('message', async (event) => {
     scrollTarget.value.scrollIntoView({ behavior: 'smooth' })
   }
 
-  if (Number(chatStore.singleconvo.status) !== Number(chatStore.clientId) && Number(chatStore.singleconvo.status)!==0)
+  if (Number(chatStore.singleconvo.status) !== Number(chatStore.clientId) && Number(chatStore.singleconvo.status)!==0 && !chatStore.singleconvo.pair.includes(0))
   {
     await showtyping()
   }

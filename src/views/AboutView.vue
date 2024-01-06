@@ -1,9 +1,14 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <headerSection />
+  <footerSection />
 </template>
 
-<style>
+<script setup>
+  import headerSection from '@/components/headerSection.vue';
+  import footerSection from '@/components/footerSection.vue';
+
+</script>
+
+<style scoped>
 
 </style>
