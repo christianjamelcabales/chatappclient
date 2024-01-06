@@ -125,7 +125,7 @@ const reset = async () => {
   location.reload()
 }
 
-const message = ref('')
+let message = ref('')
 // Create WebSocket connection.
 
 const socket = new WebSocket('wss://chatappserver-34od.onrender.com/');
@@ -152,6 +152,8 @@ const send = async () => {
   await chatStore.getSingle()
 
   console.log('Message sent')
+  message.value = ''
+  
 }
 
 let clientIdSet = false
@@ -184,7 +186,7 @@ socket.addEventListener('message', async (event) => {
   }
 
  
-
+ 
 
 })
 
