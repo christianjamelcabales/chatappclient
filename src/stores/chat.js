@@ -13,15 +13,26 @@ export const useChatStore = defineStore('chat', {
   }),
   actions: {
     async getAll() {
-      
       try {
         const response = await myAxios.get('/chat/');
         this.convo = response.data;
       } catch (error) {
         console.error('Error fetching all conversations:', error);
-      } 
-    },
-
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          console.error('Server responded with status:', error.response.status);
+          console.error('Response data:', error.response.data);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.error('No response received. Request:', error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.error('Error setting up the request:', error.message);
+        }
+      }
+    }
+    ,
+    
     async getSingle() {
       await this.getAll()
       // Find the conversation
