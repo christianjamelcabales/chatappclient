@@ -18,6 +18,7 @@ export const useChatStore = defineStore('chat', {
         this.convo = response.data;
       } catch (error) {
         console.error('Error fetching all conversations:', error);
+        console.log(myAxios.baseURL)
         if (error.response) {
           // The request was made and the server responded with a status code
           console.error('Server responded with status:', error.response.status);
