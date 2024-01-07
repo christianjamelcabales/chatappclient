@@ -2,12 +2,18 @@
   <headerSection />
   <div class="container text-center pt-5">
       <h3>Intoducing <strong>StrangersLink</strong> </h3>
-      <h4>Discover Online Connections </h4>
-      
-      <router-link to="/chat"><strong>Chat Now</strong></router-link>
+      <h4><i>Discover Connections in the Online Space</i></h4>
+      <div class="mt-5">
+        <router-link to="/chat"><strong>Chat Now</strong></router-link>
+      </div>
       <br>
-      <img src="../../public/cjlogonew.png" class="mt-5" alt="">
-      <p>&copy; 2024. All Rights Reserved </p>
+      <div class="fixed-bottom mb-5">
+        <img src="../../public/cjlogonew.png" class="mt-5" alt="">
+        <p>&copy; 2024. All Rights Reserved </p>
+        <hr>
+      </div>
+      
+
   </div>
 </template>
 
