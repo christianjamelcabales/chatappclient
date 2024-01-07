@@ -1,7 +1,7 @@
 <template>
   <headerSection />
   <div class="container text-center pt-5">
-      <h3>Intoducing <strong>StrangersLink</strong> </h3>
+      <h3>Introducing <strong>StrangersLink</strong> </h3>
       <h4><i>Discover Connections in the Online Space</i></h4>
       <div class="mt-5">
         <router-link to="/chat"><strong>Chat Now</strong></router-link>
