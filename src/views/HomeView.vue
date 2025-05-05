@@ -1,11 +1,7 @@
 <template>
   <headerSection />
   <div class="container text-center pt-5">
-<<<<<<< HEAD
       <h3>Introducing <strong>Chatyuki</strong> </h3>
-=======
-      <h3>Introducing <strong>StrangersLink</strong> </h3>
->>>>>>> 6f244fc4f3d45153a6bd192a9c14483a6fc7f8a7
       <h4><i>Discover Connections in the Online Space</i></h4>
       <div class="mt-5">
         <router-link to="/chat"><strong>Chat Now</strong></router-link>
