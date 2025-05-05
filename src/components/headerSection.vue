@@ -3,7 +3,7 @@
   <div class="main d-flex justify-content-center sticky-top py-1">
     <img src="/cjlogonew.png" alt="Logo" class="logo mr-3 shadow-sm rounded-circle">
     <div class="d-flex flex-column align-items-center">
-        <h1 class="my-auto"> StrangersLink </h1> <!-- Bootstrap class "my-auto" vertically centers the title -->
+        <h1 class="my-auto"> Chatyuki </h1> <!-- Bootstrap class "my-auto" vertically centers the title -->
     </div>
   </div>
 
