@@ -1,7 +1,7 @@
 <template>
 
   <div class="main d-flex justify-content-center sticky-top py-1">
-    <img src="/cjlogonew2.png" alt="Logo" class="logo mr-3 shadow-sm rounded-circle">
+    <img src="/cjlogonew3.png" alt="Logo" class="logo mr-3 shadow-sm rounded-circle">
     <div class="d-flex flex-column align-items-center">
         <h1 class="my-auto"> Yukimeet </h1> <!-- Bootstrap class "my-auto" vertically centers the title -->
     </div>
